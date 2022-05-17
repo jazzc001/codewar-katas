@@ -16,3 +16,16 @@ describe('open and close pair parens', () => {
     })
 })
 
+describe('Without closing brackets', () => {
+    test('one pair with open paren will be false', () => {
+        expect(validParentheses('()(')).toBe(false)
+    })
+
+    test('multiple pairs with open paren will be false', () => {
+        expect(validParentheses('()()()()(')).toBe(false)
+    })
+
+    test('multiple pairs with open paren will be false', () => {
+        expect(validParentheses('((()))))()()()(')).toBe(false)
+    })
+})
