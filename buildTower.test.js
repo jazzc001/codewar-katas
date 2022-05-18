@@ -8,5 +8,9 @@ describe('builTower', () => {
             "*****"
           ]);
     })
+
+    test('5 floors tower', () => {
+        expect(buildTower(3)).toEqual([ '    *    ', '   ***   ', '  *****  ', ' ******* ', '*********' ]);
+    })
 })
 
