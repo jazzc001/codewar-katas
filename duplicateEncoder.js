@@ -1,25 +1,20 @@
 const duplicateEncode = (word) => {
 
-    // const uniqueStr = [...new Set(word)];
-    // console.log(uniqueStr);
-    // let encodedStr = []
-    // const splitedWord = word.split('')
-    // console.log(splitedWord)
-    // for (let i = 0; i < uniqueStr.length; i++) {
-    //     if ( splitedWord.includes(splitedWord[i])) {
-    //         encodedStr.push('(')
-    //     } else {
-    //         encodedStr.push(')')
-    //     }
-    // }
-    // console.log(encodedStr)
-    // return encodedStr.join()
 
     var count = {};
     const splitedWord = word.toLowerCase().split('')
-    splitedWord.forEach(function(s) {
-        count[s] = (count[s] || 0) + 1;
-    });
+
+    //option 1
+    // splitedWord.forEach((s) => {
+    //     count[s] = (count[s] || 0) + 1;
+    // });
+
+    //option 2
+    splitedWord.forEach((s) => {
+        count[s] ? count[s]++ : count[s] = 1;
+        });
+
+    console.log(count)
 
     
     const newWord = splitedWord.map((i) => {
@@ -28,5 +23,6 @@ const duplicateEncode = (word) => {
     return newWord.join('')
 }
 
+console.log(duplicateEncode('recede'))
 
 module.exports = { duplicateEncode };
