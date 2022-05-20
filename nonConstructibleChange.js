@@ -1,5 +1,5 @@
-const nonConstructibleChange = () => {
-    
+const nonConstructibleChange = (coins) => {
+
 }
 
 module.exports = {nonConstructibleChange}
