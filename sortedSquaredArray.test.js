@@ -6,7 +6,7 @@ describe('sortedSquaredArray', () =>{
         expect(sortedSquaredArray(array)).toEqual([1, 4, 9, 25, 36, 64, 81])
     })
     test('edge cases', () => {
-        array = [10, 5, 0, 25, 10]
+        array = [10, 5, 0, 5, 10]
         expect(sortedSquaredArray(array)).toEqual([0 ,25, 25, 100, 100])
     })
 })
