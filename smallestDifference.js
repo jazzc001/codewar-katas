@@ -1,21 +1,34 @@
 const smallestDifference = (arrayOne, arrayTwo) => {
-    const sortedArrayOne = arrayOne.sort((a, b) => a -b);
-    const sortedArrayTwo = arrayTwo.sort((a, b) => a-b);
-
-    console.log(sortedArrayOne)
-    let potentialResults = [];
+    const sortedArrayOne = arrayOne.sort((a, b) => a -b);// [ -1, 3, 5, 10, 20, 28 ]
+    
+    const sortedArrayTwo = arrayTwo.sort((a, b) => a-b); //[ 15, 17, 26, 134, 135 ]
+    let potentialResults = {};
     sortedArrayOne.forEach((e) => {
         sortedArrayTwo.forEach((i) => {
-            potentialResults.push([e+i, e, i])
+            let minus = Math.abs(e - i);
+            potentialResults[minus] = [e , i]
         })
     })
 
-    // for (let i = 0; i < sortedArrayOne.length; i++) {
-    //     for (let j = 0; j < sortedArrayTwo.length;j++) {
-    //         potentialResults.push([arrayOne[i]+arrayTwo[j], arrayOne[i], arrayTwo[j]])
+    const allKeys = []
+    for (let key in potentialResults) {
+        allKeys.push(key)
+    }
+
+    return potentialResults[allKeys[0]];
+
+
+    //option 2
+    // let aOneIdx = 0;
+    // let aTwoIdx = 0;
+    // while ( aOneIdx < sortedArrayOne.length) {
+    //     while ( aTwoIdx < sortedArrayTwo.length) {
+    //         let currentMinus = Math.abs(arrayOne[aOneIdx]-arrayTwo[aTwoIdx]);
+    //         if (currentMinus < arrayTwo[aTwoIdx + 1]) {
+    //             aOneIdx ++;
+    //         } else if (currentMinus > arrayTwo[aTwoIdx + 1])
     //     }
     // }
-    return potentialResults;
 }
 
 const arrayOne = [-1, 5, 10, 20, 28, 3];
