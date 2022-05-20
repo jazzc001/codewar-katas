@@ -1,5 +1,5 @@
-const ortedSquaredArray = () => {
-    
+const sortedSquaredArray = () => {
+
 }
 
-module.exports = { ortedSquaredArray }
+module.exports = { sortedSquaredArray }
