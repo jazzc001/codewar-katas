@@ -1,7 +1,10 @@
+//Time: O(n2)
+//space: O(n)
+
 const threeNumberSum = (array, target) => {
     array.sort((a, b) => a-b); //[-8, -6, 1, 2, 3,  5, 6, 12]
     let results = []
-    for (let i = 0; i < array.length -2; i++) {
+    for (let i = 0; i < array.length -2; i++) { // why array.length -2 coz the last one we want to loop throught is the last third one which will sume last two numbers
         let leftIndex = i+1
         let rightIndex = array.length -1
         while (leftIndex < rightIndex) {
