@@ -7,9 +7,10 @@ const nonConstructibleChange = (coins) => {
     }
     
     //get the potential nonConstructible
-    let potentialNonConstructible = []
-    
-    console.log(fullCombinations)
+    let potentialNonConstructible = fullCombinations.filter((self) => {
+        return coins.indexOf(self) === -1;
+    })
+    console.log(potentialNonConstructible)
     return 1;
 }
 const input = [5, 7, 1, 1, 2, 3, 22];
