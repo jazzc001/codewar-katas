@@ -9,6 +9,7 @@ const validSequence = (array, sequence) => {
             }
         })
     }
+    console.log(result)
     
     //check 2 array are equal
     const arrayEquals = (a, b) =>  {
@@ -21,9 +22,9 @@ const validSequence = (array, sequence) => {
     return arrayEquals(result, sequence);
 }
 
-// array = [5, 1, 22, 25, 6, -1, 8, 10];
-// sequence = [1, 6, -1, 10];
-// console.log(validSequenc(array, sequence))
+array = [5, 1, 22, 25, 6, -1, 8, 10];
+sequence = [1, 6, -1, 10];
+console.log(validSequence(array, sequence))
 
 
 module.exports = { validSequence }
