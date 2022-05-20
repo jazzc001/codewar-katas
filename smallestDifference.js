@@ -1,7 +1,8 @@
 const smallestDifference = (arrayOne, arrayTwo) => {
+
     const sortedArrayOne = arrayOne.sort((a, b) => a -b);// [ -1, 3, 5, 10, 20, 28 ]
-    
     const sortedArrayTwo = arrayTwo.sort((a, b) => a-b); //[ 15, 17, 26, 134, 135 ]
+
     let potentialResults = {};
     sortedArrayOne.forEach((e) => {
         sortedArrayTwo.forEach((i) => {
@@ -31,8 +32,8 @@ const smallestDifference = (arrayOne, arrayTwo) => {
     // }
 }
 
-const arrayOne = [-1, 5, 10, 20, 28, 3];
-const arrayTwo = [26, 134, 135, 15, 17];
-console.log(smallestDifference(arrayOne, arrayTwo));
+// const arrayOne = [-1, 5, 10, 20, 28, 3];
+// const arrayTwo = [26, 134, 135, 15, 17];
+// console.log(smallestDifference(arrayOne, arrayTwo));
 
 module.exports = { smallestDifference }
