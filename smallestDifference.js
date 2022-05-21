@@ -3,6 +3,7 @@ const smallestDifference = (arrayOne, arrayTwo) => {
     const sortedArrayOne = arrayOne.sort((a, b) => a -b);// [ -1, 3, 5, 10, 20, 28 ]
     const sortedArrayTwo = arrayTwo.sort((a, b) => a-b); //[ 15, 17, 26, 134, 135 ]
 
+    // option 1 time: o(n2) space 0(n)
     let potentialResults = {};
     sortedArrayOne.forEach((e) => {
         sortedArrayTwo.forEach((i) => {
@@ -22,13 +23,12 @@ const smallestDifference = (arrayOne, arrayTwo) => {
     //option 2
     // let aOneIdx = 0;
     // let aTwoIdx = 0;
-    // while ( aOneIdx < sortedArrayOne.length) {
-    //     while ( aTwoIdx < sortedArrayTwo.length) {
+    // while ( aOneIdx < sortedArrayOne.length && aTwoIdx < sortedArrayTwo.length ) {
+    //     
     //         let currentMinus = Math.abs(arrayOne[aOneIdx]-arrayTwo[aTwoIdx]);
     //         if (currentMinus < arrayTwo[aTwoIdx + 1]) {
     //             aOneIdx ++;
     //         } else if (currentMinus > arrayTwo[aTwoIdx + 1])
-    //     }
     // }
 }
 
