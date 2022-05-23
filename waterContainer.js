@@ -7,7 +7,7 @@ const waterContainer = (height) => {
             largestIndex = height.indexOf(largest)
         };
     })
-    // find the distance of the largest wiht others and corresponding values, store it in a hashmap
+    // find the distance of the largest wiht others and corresponding values, store it in an array
     let distance = []  //{value in height: distance}
     height.forEach((i) => {
         let len = Math.abs(height.indexOf(i) - largestIndex)
