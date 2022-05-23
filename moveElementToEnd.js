@@ -1,12 +1,17 @@
 const moveElementToEnd = (array, toMove) => {
     let moving = []
-    array.forEach((e) => {
-        if ( e === toMove ) {
-            moving.push(e)
-            array.splice(array.indexOf(e), 1)
-        };
-    });
-   return array.concat(moving)
+    let newArray = array.reduce((pre, cur) => {
+        if (cur === toMove) {
+            moving.push(cur)
+            pre.splice(cur, -1)
+        } else {
+            pre.push(cur) 
+        }
+       
+    return pre}, []);
+
+    
+   return newArray.concat(moving);
 };
 
 const array = [2, 1, 2, 2, 2, 3, 4, 2];
