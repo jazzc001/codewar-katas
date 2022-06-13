@@ -17,15 +17,17 @@ const sqInRect = (lng, wdth) => {
             let lastTwo = result[result.length-2]
             let lastOne = result[result.length-1]
             let diff = lastTwo - lastOne
-            console.log(diff)
+            
             if ( diff > lastOne ) {
                 result.push(lastOne, diff-lastOne)
             } else {
-                result.push(diff, diff)
+                let times = lastOne/diff
+               
+                result.push(diff.repeat(times))
             }
         }
         isBigger()
-        while ( (result[result.length-2] - result[result.length-1]) &&  (result[result.length -3] !== result[result.length-1])) {
+        while ( (result[result.length-1] > 0) &&  (result[result.length -3] !== result[result.length-1])) {
             isBigger()
         }
         
@@ -35,6 +37,6 @@ const sqInRect = (lng, wdth) => {
 }
 
 
-console.log(sqInRect(200, 140))
+console.log(sqInRect(13,12))
 
 module.exports = { sqInRect }
