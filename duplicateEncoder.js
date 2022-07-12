@@ -15,6 +15,7 @@ const duplicateEncode = (word) => {
         });
 
     console.log(count)
+    console.log(splitedWord)
 
     
     const newWord = splitedWord.map((i) => {
