@@ -1,7 +1,7 @@
 const nbYear = (p0, percent, aug, p) => {
     let currentPopulation = [p0];
     let y = 0
-    for (let i = 0; currentPopulation[i] < p; i++) {
+    for (let i = 0; currentPopulation[i] <= p; i++) {
         currentPopulation.push(currentPopulation[i]*(1+(percent/100)) + aug);
         y++;
     }
