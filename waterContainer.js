@@ -15,7 +15,7 @@ const waterContainer = (heights) => {
    return maxArea;
 }
 /*
-time: o(n^2);
+time: o(n);
 space: o(1);
 */
 
