@@ -5,13 +5,17 @@ const waterContainer = (height) => {
             let h = Math.min(height[i], height[j]);
             let w = j-i;
             let area = h*w;
-            area > maxArea ? maxArea = area : maxArea = maxArea;
+            maxArea = Math.max(maxArea, area)
 
        }
    }
    
    return maxArea;
 }
+/*
+time: o(n^2);
+space: o(1);
+*/
 
 height = [1,8,6,2,5,4,8,3,7]
 console.log(waterContainer(height))
