@@ -1,13 +1,15 @@
-const waterContainer = (height) => {
-   let maxArea = 0;
-   for (let i = 0; i< height.length; i++) {
-       for (let j = i+1; j< height.length; j++) {
-            let h = Math.min(height[i], height[j]);
-            let w = j-i;
-            let area = h*w;
-            maxArea = Math.max(maxArea, area)
+const waterContainer = (heights) => {
+   let maxArea = 0, p1 = 0, p2 = heights.length - 1;
+   console.log({ p1,p2,maxArea})
+   while (p1 < p2) {
+       console.log({p1, p2})
+    const height = Math.min(heights[p1], heights[p2]);
+    const width = p2 - p1;
+    const area = height*width;
+    console.log({height, width, area})
+    maxArea = Math.max(maxArea, area);
+    heights[p1] <= heights[p2] ? p1++ : p2--;
 
-       }
    }
    
    return maxArea;
