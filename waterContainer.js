@@ -1,16 +1,16 @@
 const waterContainer = (height) => {
-   let area  = [];
+   let maxArea = 0;
    for (let i = 0; i< height.length; i++) {
        for (let j = i+1; j< height.length; j++) {
-            if (height[i] > height[j]) {
-                area.push(height[j]*(j-i))
-            } else {
-                area.push(height[i]*(j-i));
-            };
+            let h = Math.min(height[i], height[j]);
+            let w = j-i;
+            let area = h*w;
+            area > maxArea ? maxArea = area : maxArea = maxArea;
+
        }
    }
-   let result = area.sort((a,b) => a-b)
-   return result[result.length-1]
+   
+   return maxArea;
 }
 
 height = [1,8,6,2,5,4,8,3,7]
