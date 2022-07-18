@@ -1,13 +1,18 @@
 const run = (student_list) => {
-    let array1 = {};
+    
+    let pairingChecker = {}; 
+    const pairingCheck = (i) => { pairingChecker[i] ? pairingChecker[i] += 1 : pairingChecker[i] = 1  }
 
-    student_list.forEach((i) => {
-        array1[i] ? array1[i] += 1 : array1[i] = 1
-    });
-    let result = parseInt(Object.keys(array1).find(key => array1[key] === 1));
-    return result;
+    const findKeyByValue = (value, object) => {
+        return Object.keys(object).find(key => object[key] === value);
+    }
+
+    student_list.forEach(i => pairingCheck(i));
+    let result = parseInt(findKeyByValue(1, pairingChecker));
+    return result || null;
     
 }
 
+console.log(run([2,3,2]))
 
 module.exports = { run };
