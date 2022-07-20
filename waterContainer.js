@@ -1,4 +1,6 @@
 const waterContainer = (heights) => {
+
+   let t0 = performance.now();
    let maxArea = 0, p1 = 0, p2 = heights.length - 1;
    console.log({ p1,p2,maxArea})
    while (p1 < p2) {
@@ -11,6 +13,8 @@ const waterContainer = (heights) => {
     heights[p1] <= heights[p2] ? p1++ : p2--;
 
    }
+   let t1 = performance.now();
+   console.log(`water container tool ${(t1-10)} milliseconds.`)
    
    return maxArea;
 }
