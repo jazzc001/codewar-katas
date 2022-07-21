@@ -23,6 +23,11 @@ const trap = (heights) => {
     return accWater
 }
 
+/*
+time: O(n^2) time
+space: O(n) space
+*/
+
 console.log(trap([0,1,0,2]))
 
 module.exports = {trap}
